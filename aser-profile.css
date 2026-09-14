@@ -1,0 +1,131 @@
+/* ==========================================
+   SECOND PAGE: PROJECTS SECTION & ANIMATIONS
+   ========================================== */
+
+/* Active link indicator for header navigation */
+.navigation a.active {
+    color: #00d5ff;
+    font-weight: 700;
+}
+
+/* Base Page Section */
+.page-section {
+    min-height: 100vh;
+    padding: 140px 10% 60px 10%;
+    background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.85)), url('5590457.jpg') no-repeat center center / cover fixed;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.section-header {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.section-header h2 {
+    font-size: 2.5em;
+    font-weight: 800;
+}
+
+.section-header h2 span {
+    color: #00d5ff;
+}
+
+.section-header h3 {
+    font-size: 1.1em;
+    color: #d1d1d1;
+    font-weight: 400;
+    margin-top: 5px;
+}
+
+/* Projects Grid Layout */
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    width: 100%;
+    max-width: 1200px;
+}
+
+/* Project Cards Style */
+.project-card {
+    background-color: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 30px rgba(0, 213, 255, 0.25);
+}
+
+.card-img img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.card-content {
+    padding: 20px;
+}
+
+.card-content h4 {
+    font-size: 1.3em;
+    color: #fff;
+    margin-bottom: 8px;
+}
+
+.card-content p {
+    font-size: 0.9em;
+    color: #cccccc;
+    line-height: 1.5;
+    margin-bottom: 18px;
+}
+
+.card-btn {
+    display: inline-block;
+    color: #00d5ff;
+    border: 1.5px solid #00d5ff;
+    padding: 8px 18px;
+    border-radius: 20px;
+    font-size: 0.85em;
+    font-weight: 600;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.card-btn:hover {
+    background-color: #00d5ff;
+    color: #121212;
+}
+
+/* ==========================================
+   REFRESH FADE-IN ANIMATIONS FOR SECOND PAGE
+   ========================================== */
+
+.section-header, 
+.project-card {
+    opacity: 0;
+    animation: fadeInUp 0.8s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+}
+
+/* Staggered Delay Sequence on Load/Refresh */
+.section-header {
+    animation-delay: 0.2s;
+}
+
+.project-card:nth-child(1) {
+    animation-delay: 0.4s;
+}
+
+.project-card:nth-child(2) {
+    animation-delay: 0.55s;
+}
+
+.project-card:nth-child(3) {
+    animation-delay: 0.7s;
+}

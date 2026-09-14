@@ -1,0 +1,392 @@
+//* ==========================================
+   SECOND PAGE: PROJECTS SECTION & ANIMATIONS
+   ========================================== */
+
+/* Active link indicator for header navigation */
+.navigation a.active {
+    color: #00d5ff;
+    font-weight: 700;
+}
+
+/* Base Page Section */
+.page-section {
+    min-height: 100vh;
+    padding: 140px 10% 60px 10%;
+    background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.85)), url('5590457.jpg') no-repeat center center / cover fixed;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.section-header {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.section-header h2 {
+    font-size: 2.5em;
+    font-weight: 800;
+}
+
+.section-header h2 span {
+    color: #00d5ff;
+}
+
+.section-header h3 {
+    font-size: 1.1em;
+    color: #d1d1d1;
+    font-weight: 400;
+    margin-top: 5px;
+}
+
+/* Projects Grid Layout */
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    width: 100%;
+    max-width: 1200px;
+}
+
+/* Project Cards Style */
+.project-card {
+    background-color: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 30px rgba(0, 213, 255, 0.25);
+}
+
+.card-img img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.card-content {
+    padding: 20px;
+}
+
+.card-content h4 {
+    font-size: 1.3em;
+    color: #fff;
+    margin-bottom: 8px;
+}
+
+.card-content p {
+    font-size: 0.9em;
+    color: #cccccc;
+    line-height: 1.5;
+    margin-bottom: 18px;
+}
+
+.card-btn {
+    display: inline-block;
+    color: #00d5ff;
+    border: 1.5px solid #00d5ff;
+    padding: 8px 18px;
+    border-radius: 20px;
+    font-size: 0.85em;
+    font-weight: 600;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.card-btn:hover {
+    background-color: #00d5ff;
+    color: #121212;
+}
+
+/* ==========================================
+   REFRESH FADE-IN ANIMATIONS FOR SECOND PAGE
+   ========================================== */
+
+.section-header, 
+.project-card {
+    opacity: 0;
+    animation: fadeInUp 0.8s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+}
+
+/* Staggered Delay Sequence on Load/Refresh */
+.section-header {
+    animation-delay: 0.2s;
+}
+
+.project-card:nth-child(1) {
+    animation-delay: 0.4s;
+}
+
+.project-card:nth-child(2) {
+    animation-delay: 0.55s;
+}
+
+.project-card:nth-child(3) {
+    animation-delay: 0.7s;
+}
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* 2. Set default initial state for components */
+
+.main h2, 
+.main h3, 
+.main-btn, 
+.social-icons a, 
+.profile-card {
+    opacity: 0;
+    animation: fadeInUp 0.8s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+}
+
+/* 3. Staggered Delays (Sequence on Refresh) */
+
+
+.main h2 {
+    animation-delay: 0.3s;
+}
+
+.main h3 {
+    animation-delay: 0.45s;
+}
+
+.main-btn {
+    animation-delay: 0.6s;
+}
+
+/* Social icons fade in one by one */
+.social-icons a:nth-child(1) { animation-delay: 0.75s; }
+.social-icons a:nth-child(2) { animation-delay: 0.85s; }
+.social-icons a:nth-child(3) { animation-delay: 0.95s; }
+
+.profile-card {
+    animation-delay: 0.5s;
+}
+
+/* Apply animation to body elements on refresh */
+body {
+    animation: pageLoad 0.8s ease-out forwards;
+}
+* {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+    text-decoration: none;
+}
+
+body {
+    background-color: #121212;
+    color: #ffffff;
+    overflow-x: hidden;
+}
+
+/* Header */
+header {
+    background-color: rgba(42, 40, 41, 0.95);
+    backdrop-filter: blur(10px);
+    width: 90%;
+    max-width: 1200px;
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 999;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 40px;
+    border-radius: 20px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+}
+
+.logo {
+    color: #fcfbfb;
+    font-size: 1.8em;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.navigation a {
+    color: #fcfafc;
+    font-size: 1em;
+    font-weight: 500;
+    margin-left: 25px;
+    transition: color 0.3s ease;
+}
+
+.navigation a:hover {
+    color: #00d5ff;
+}
+
+/* Main Section */
+.main {
+    min-height: 100vh;
+    padding: 140px 10% 60px 10%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 40px;
+    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.7)), url('5590457.jpg') no-repeat center center / cover fixed;
+}
+
+.main-content {
+    max-width: 600px;
+}
+
+.main h2 {
+    font-size: 2.2em;
+    color: #fff;
+    font-weight: 800;
+    line-height: 1.2;
+}
+
+.main h2 span {
+    color: #00d5ff;
+    font-size: 1.3em;
+    font-weight: 700;
+    display: inline-block;
+    margin-top: 5px;
+}
+
+.main h3 {
+    font-size: 1.3em;
+    color: #d1d1d1;
+    font-weight: 400;
+    margin-top: 10px;
+}
+
+/* Action Button */
+.main-btn {
+    display: inline-block;
+    color: #fff;
+    font-size: 1em;
+    font-weight: 600;
+    padding: 12px 30px;
+    margin-top: 25px;
+    border-radius: 30px;
+    background: linear-gradient(45deg, #00d5ff, #0072ff);
+    box-shadow: 0 4px 15px rgba(0, 213, 255, 0.4);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.main-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(0, 213, 255, 0.6);
+}
+
+/* Social Icons */
+.social-icons {
+    margin-top: 25px;
+    display: flex;
+    gap: 12px;
+}
+
+.social-icons img {
+    width: 40px;
+    height: 40px;
+    background-color: #f4f2f5;
+    border-radius: 50%;
+    padding: 8px;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.social-icons img:hover {
+    transform: translateY(-5px) scale(1.1);
+    background-color: #00d5ff;
+}
+
+/* Profile Card */
+.profile-card {
+    width: 320px;
+    height: 420px;
+    background-color: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    overflow: hidden;
+    flex-shrink: 0;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.profile-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 35px rgba(0, 213, 255, 0.3);
+}
+
+.profile-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Responsive Styles for Tablets and Mobile Devices */
+@media (max-width: 992px) {
+    header {
+        width: 95%;
+        padding: 12px 25px;
+    }
+
+    .main {
+        flex-direction: column-reverse;
+        justify-content: center;
+        text-align: center;
+        padding-top: 140px;
+    }
+
+    .main-content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .social-icons {
+        justify-content: center;
+    }
+
+    .profile-card {
+        width: 260px;
+        height: 350px;
+    }
+}
+
+@media (max-width: 600px) {
+    header {
+        flex-direction: column;
+        gap: 10px;
+        border-radius: 15px;
+        top: 10px;
+    }
+
+    .navigation a {
+        margin: 0 10px;
+        font-size: 0.9em;
+    }
+
+    .main h2 {
+        font-size: 1.7em;
+    }
+
+    .main h2 span {
+        font-size: 1.2em;
+    }
+
+    .main h3 {
+        font-size: 1em;
+    }
+}

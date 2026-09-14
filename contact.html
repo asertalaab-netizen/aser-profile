@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact | Aser</title>
+    <link rel="stylesheet" href="contact.css">
+</head>
+<body>
+
+    <!-- Unified Background Mesh -->
+    <div class="bg-gradient-mesh"></div>
+
+    <!-- Header Navigation -->
+    <header class="navbar animate-nav">
+        <a href="index.html" class="logo">ASER</a>
+        <nav class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="index.html#product-section">Products</a>
+            <a href="contact.html" class="active">Contact</a>
+        </nav>
+    </header>
+
+    <!-- Main Section matching Home/Products structure -->
+    <main class="page-container">
+        
+        <!-- Hero Section Header -->
+        <section class="contact-hero animate-hero">
+            <span class="section-tag">GET IN TOUCH</span>
+            <h1 class="page-title">Let’s Work <span class="highlight">Together</span></h1>
+            <p class="section-subtitle">Reach out directly via WhatsApp or connect across social channels.</p>
+        </section>
+
+        <!-- Main Featured Contact Banner (Matches Products Card Style) -->
+        <section class="featured-card-wrapper animate-item">
+            <div class="contact-card featured-card" onclick="copyWhatsApp(event)">
+                <div class="card-content">
+                    <div class="status-indicator">
+                        <span class="dot"></span>
+                        <span>Direct Channel</span>
+                    </div>
+                    <h2>WhatsApp Direct</h2>
+                    <p class="phone-display" id="whatsappNum">01010505680</p>
+                </div>
+                <button class="action-btn" id="copyBtn" type="button">Copy Number</button>
+            </div>
+        </section>
+
+        <!-- Social Grid matching Product Grid -->
+        <section class="grid-section">
+            <div class="social-grid">
+
+                <a href="https://www.instagram.com/aser._.3/" target="_blank" class="grid-card animate-item">
+                    <div class="card-badge">Social</div>
+                    <div class="card-body">
+                        <h3>Instagram</h3>
+                        <p>@aser._.3</p>
+                    </div>
+                    <span class="card-link-text">Visit Profile &rarr;</span>
+                </a>
+
+                <a href="https://www.tiktok.com/@asooorrr" target="_blank" class="grid-card animate-item">
+                    <div class="card-badge">Social</div>
+                    <div class="card-body">
+                        <h3>TikTok</h3>
+                        <p>@asooorrr</p>
+                    </div>
+                    <span class="card-link-text">Visit Profile &rarr;</span>
+                </a>
+
+                <a href="https://www.facebook.com/aser.mohamedadelazim/" target="_blank" class="grid-card animate-item">
+                    <div class="card-badge">Social</div>
+                    <div class="card-body">
+                        <h3>Facebook</h3>
+                        <p>Aser Mohamed</p>
+                    </div>
+                    <span class="card-link-text">Visit Profile &rarr;</span>
+                </a>
+
+            </div>
+        </section>
+
+        <footer class="site-footer animate-item">
+            <p>&copy; 2026 Aser. All rights reserved.</p>
+        </footer>
+
+    </main>
+
+    <script>
+        function copyWhatsApp(event) {
+            const number = document.getElementById("whatsappNum").innerText;
+            const btn = document.getElementById("copyBtn");
+
+            navigator.clipboard.writeText(number).then(() => {
+                btn.innerText = "Copied!";
+                btn.classList.add("success");
+
+                setTimeout(() => {
+                    btn.innerText = "Copy Number";
+                    btn.classList.remove("success");
+                }, 2000);
+            });
+        }
+    </script>
+</body>
+</html>
